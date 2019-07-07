@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if not user.is_authenticated %}
+	<p>You are not authenticated. </p>
+{% endif %}
+
+{% endblock %}
