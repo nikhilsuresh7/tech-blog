@@ -38,10 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # my apps
-    'user'
+    # add new apps here
+    'user',
+    'blog',
 ]
 
+# specify custom model
 AUTH_USER_MODEL = 'user.User'
 
 MIDDLEWARE = [
@@ -122,4 +124,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+
+LOCAL_STATIC_CDN_PATH = os.path.join(os.path.dirname(BASE_DIR), 'static_cdn')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'staticfiles')
+]
+
+STATIC_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'static')
 STATIC_URL = '/static/'
+
+
+MEDIA_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'media')
+MEDIA_URL = '/media/'
+
+

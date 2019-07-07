@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% if title %}
+	<h1>{{title}}</h1>
+{% endif %}
+
+{% block content %}
+
+<form method="POST" action="."> {% csrf_token %}
+	<h3>Are you sure you want to delete {{object.title}} ?</h3>
+	<button type="submit">Yes</button>
+</form>
+
+{% endblock %}

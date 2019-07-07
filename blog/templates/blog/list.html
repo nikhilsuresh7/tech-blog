@@ -2,14 +2,6 @@
 
 {% block content %}
 
-<div class="container">
-	{% if title %}
-		<p1>Hey, welcome to our {{title}} page!</p1>
-	{% endif %}
-
-	<p1>Have a look at the most recent posts.</p1>
-</div>
-
 {% for object in objects %}
 	<div class="card" style="width: 23rem; margin: 5px;">
 	{% include 'blog/list-blog.html' with post=object truncate=True detail=False %}
