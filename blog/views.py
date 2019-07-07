@@ -36,7 +36,10 @@ def blog_post_detail_view(request, id):
 	# Detail page of post
 	obj = get_object_or_404(BlogPost, id=id)
 	template_name = "blog/detail.html"
-	context = {"object":obj}
+	context = {
+	"object":obj,
+	"title": obj.title,
+	}
 	return render(request, template_name, context)
 
 @login_required
@@ -66,7 +69,10 @@ def blog_post_delete_view(request, id):
 	if request.method == "POST":
 		obj.delete()
 		return redirect("/blog")
-	context = {"object": obj}
+	context = {
+	"title": f"Delete: {obj.title}",
+	"object": obj
+	}
 	return render(request, template_name, context)
 
 

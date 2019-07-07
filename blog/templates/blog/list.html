@@ -3,7 +3,7 @@
 {% block content %}
 
 {% for object in objects %}
-	<div class="card" style="width: 23rem; margin: 5px;">
+	<div class="card" style="width: 22rem; margin: 5px;">
 	{% include 'blog/list-blog.html' with post=object truncate=True detail=False %}
 	</div>
 {% endfor %}

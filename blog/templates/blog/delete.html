@@ -8,7 +8,9 @@
 
 <form method="POST" action="."> {% csrf_token %}
 	<h3>Are you sure you want to delete {{object.title}} ?</h3>
-	<button type="submit">Yes</button>
+
+	<a href="{{object.get_absolute_url}}" class="btn btn-success" role="button">No :)</a>
+	<button type="submit" class="btn btn-info">Yes</button>
 </form>
 
 {% endblock %}

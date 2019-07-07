@@ -7,5 +7,6 @@ def home_page(request):
 	obj = BlogPost.objects.all()[:3]
 	context = {
 		"objects": obj,
+		"title": "Home",
 	}
 	return render(request, "home.html", context)

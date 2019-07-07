@@ -41,7 +41,11 @@ INSTALLED_APPS = [
     # add new apps here
     'user',
     'blog',
+    'crispy_forms',
 ]
+
+# for using crispy forms
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # specify custom model
 AUTH_USER_MODEL = 'user.User'

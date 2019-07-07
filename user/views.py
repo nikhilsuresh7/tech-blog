@@ -34,7 +34,7 @@ class LoginView(FormView):
 	            return redirect(redirect_path)
 	        else:
 	            return redirect("/")
-	    return super(LoginView, self).form_invalid()
+	    return super(LoginView, self).form_invalid(form)
 
 class LogoutView(RedirectView):
 	url = '/login'
